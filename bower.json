@@ -33,6 +33,8 @@
     "angular-bootstrap": "~0.14.3"
   },
   "resolutions": {
-    "angular": "~1.4.6"
+    "angular": "~1.4.6",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4"
   }
 }
