@@ -1,0 +1,22 @@
+version: '2.1'
+services:
+  mongodb:
+    image: mongo:latest
+    hostname: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/var/lib/mongodb
+  app:
+    build:
+      context: .
+    depends_on:
+      mongodb:
+        condition: service_started
+    environment:
+      - MONGOLAB_URI=mongodb://mongodb:27017/homogen
+    ports:
+      - "1313:1313"
+
+volumes:
+  mongo_data:
